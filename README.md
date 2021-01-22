@@ -36,3 +36,9 @@ Create a basic search form that will query the API using AJAX and display the re
 There should be some sort of searching indicator, a spinning icon or similar. 
  
 A message should be displayed if no results were found. 
+#######################################################
+Solution
+The task has been implemented.
+I used spatie/laravel-medialibrary  to load csv file with data & parse nuovo/spreadsheet-reader csv file.
+ & Bootstrap
+Implemented content filtering in VUE components. 
