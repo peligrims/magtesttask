@@ -262,7 +262,7 @@
       <workItem from="1610520511839" duration="47481000" />
       <workItem from="1610700836414" duration="1217000" />
       <workItem from="1611044915987" duration="12578000" />
-      <workItem from="1611136309521" duration="31501000" />
+      <workItem from="1611136309521" duration="32415000" />
     </task>
     <servers />
   </component>
@@ -282,6 +282,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="440" y="221" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1611229022929" />
+    <state x="462" y="117" key="FileChooserDialogImpl" timestamp="1611329635196">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611329635196" />
     <state width="1320" height="214" key="GridCell.Tab.0.bottom" timestamp="1611328118139">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -306,6 +310,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="97" width="887" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1610355301245" />
+    <state x="92" y="92" width="1182" height="544" key="git4idea.log.GitShowExternalLogAction" timestamp="1611331035430">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="git4idea.log.GitShowExternalLogAction/0.0.1366.728@0.0.1366.728" timestamp="1611331035430" />
     <state x="339" y="157" key="run.anything.popup" timestamp="1610490362094">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
