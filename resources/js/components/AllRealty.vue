@@ -1,15 +1,14 @@
 <template>
-    <div>
+    <v-app>
         <v-flex xs12 class="text-center pt-5" v-if="loading">
             <v-progress-circular indeterminate :size="100" :width="4" color="purple"></v-progress-circular>
         </v-flex>
         <h3 class="text-center">All realty</h3><br/>
         <v-alert
             v-if="filteredRealty.length <= 0"
-            class="red"
-            color="red"
+            color="red lighten-2"
             dismissible
-            icon="$mdi-Vuetify"
+            icon="mdi-car-wash"
             type="error"
         >You have no items</v-alert>
         <table class="table table-bordered" >
@@ -91,10 +90,11 @@
             </tr>
             </tbody>
         </table>
-    </div>
+    </v-app>
 </template>
 <script>
 import VueCircle from 'vue2-circle-progress'
+
 export default {
     components: {
         VueCircle

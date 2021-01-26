@@ -2159,7 +2159,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -20975,7 +20974,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
+    "v-app",
     [
       _vm.loading
         ? _c(
@@ -21002,11 +21001,10 @@ var render = function() {
         ? _c(
             "v-alert",
             {
-              staticClass: "red",
               attrs: {
-                color: "red",
+                color: "red lighten-2",
                 dismissible: "",
-                icon: "$mdi-Vuetify",
+                icon: "mdi-car-wash",
                 type: "error"
               }
             },
@@ -21209,7 +21207,23 @@ var render = function() {
             _c("th", { attrs: { width: "100" } }, [_vm._v(" ")])
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("tr", [
+            _c("th", [_vm._v("ID")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Name")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Price")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Bedroom")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Bathroom")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Storey")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Garage")]),
+            _vm._v(" "),
+            _c("th", { attrs: { width: "100" } }, [_vm._v(" ")])
+          ])
         ]),
         _vm._v(" "),
         _c(
@@ -21271,30 +21285,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("ID")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Price")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Bedroom")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Bathroom")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Storey")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Garage")]),
-      _vm._v(" "),
-      _c("th", { attrs: { width: "100" } }, [_vm._v(" ")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -83853,11 +83844,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
 Vue.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
 Vue.use(vue_axios__WEBPACK_IMPORTED_MODULE_4___default.a, axios__WEBPACK_IMPORTED_MODULE_5___default.a);
-Vue.use(vuetify__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  theme: {
-    primary: vuetify_lib_util_colors__WEBPACK_IMPORTED_MODULE_11__["default"].red
-  }
-});
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
   mode: 'history',
   routes: _routes__WEBPACK_IMPORTED_MODULE_6__["routes"]
@@ -84146,6 +84132,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/dist/vuetify.min.css */ "./node_modules/vuetify/dist/vuetify.min.css");
 /* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuetify_lib_util_colors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/util/colors */ "./node_modules/vuetify/lib/util/colors.js");
+
 
 
 
@@ -84154,7 +84142,7 @@ var opts = {
   theme: {
     themes: {
       light: {
-        primary: '#3f51b5',
+        primary: vuetify_lib_util_colors__WEBPACK_IMPORTED_MODULE_3__["default"].red.darken1,
         secondary: '#b0bec5',
         anchor: '#8c9eff'
       }

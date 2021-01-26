@@ -16,11 +16,6 @@ import colors from 'vuetify/lib/util/colors';
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
-Vue.use(Vuetify,{
-    theme:{
-        primary:colors.red
-    }
-});
 
 const router = new VueRouter({
     mode: 'history',
