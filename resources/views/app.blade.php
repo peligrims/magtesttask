@@ -17,6 +17,7 @@
 <body>
 <div class="container">
 <div id="app">
+
 </div>
     <button class="btn btn-warning" type="button">
         <a href="{{ url('/') }}">Back to Home</a>

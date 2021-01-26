@@ -1,26 +1,26 @@
+import Vuetify from "vuetify";
+
 require('./bootstrap');
 window.Vue = require('vue');
 import App from './App.vue';
+import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import {routes} from './routes';
-import vuetify from './plugins/vuetify';
 import './sass/main.scss';
-import VuePapaParse from 'vue-papa-parse';
-//import {fetch as fetchPolyfill} from 'whatwg-fetch'
 import 'whatwg-fetch';
-
-//import VueBlobJsonCsv from 'vue-blob-json-csv';
-
-
-
-
+import store from './store';
+import vuetify from './plugins/vuetify';
+import colors from 'vuetify/lib/util/colors';
 Vue.use(VueRouter);
+Vue.use(Vuex);
 Vue.use(VueAxios, axios);
-Vue.use(VuePapaParse);
-
-//Vue.use(VueBlobJsonCsv);
+Vue.use(Vuetify,{
+    theme:{
+        primary:colors.red
+    }
+});
 
 const router = new VueRouter({
     mode: 'history',
@@ -29,8 +29,8 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#app',
     vuetify,
+    store,
     router: router,
-
     render: h => h(App),
 });
 

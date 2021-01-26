@@ -31,10 +31,6 @@
                     <button type="submit" class="btn btn-primary " style="margin-top: 10px;">Add Realty</button>
                 </form>
             </div>
-
-
-
-
         </div>
     </div>
 </template>

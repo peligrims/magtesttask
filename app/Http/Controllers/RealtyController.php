@@ -32,7 +32,7 @@ class RealtyController extends Controller
         ]);
         $realty->save();
 
-        return response()->json('The book successfully added');
+        return response()->json('The realty successfully added');
     }
 
     // edit Realty
@@ -49,7 +49,7 @@ class RealtyController extends Controller
         $realty= Realty::find($id);
         $realty->update($request->all());
 
-        return response()->json('The book successfully updated');
+        return response()->json('The realty successfully updated');
     }
     // delete Realty
     public function delete($id)
@@ -57,7 +57,7 @@ class RealtyController extends Controller
         $realty = Realty::find($id);
         $realty->delete();
 
-        return response()->json('The book successfully deleted');
+        return response()->json('The realty successfully deleted');
     }
     // Import
     public function create()

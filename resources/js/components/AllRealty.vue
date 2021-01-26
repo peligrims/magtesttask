@@ -1,40 +1,64 @@
 <template>
     <div>
+        <v-flex xs12 class="text-center pt-5" v-if="loading">
+            <v-progress-circular indeterminate :size="100" :width="4" color="purple"></v-progress-circular>
+        </v-flex>
         <h3 class="text-center">All realty</h3><br/>
-        <table class="table table-bordered">
+        <v-alert
+            v-if="filteredRealty.length <= 0"
+            class="red"
+            color="red"
+            dismissible
+            icon="$mdi-Vuetify"
+            type="error"
+        >You have no items</v-alert>
+        <table class="table table-bordered" >
             <thead>
             <tr>
                 <th></th>
-                <th></th>
+                <th>
+                    <p id="min"> MIN:{{minPrice}}</p>
+                    <p id="max" > MAX:{{maxPrice}}</p></th>
                 <th>
                     <div class="filters">
                     <div class="v-input--range-slider">
-                        <lable>Range Price</lable><br>
-                        <input type="range"
-                               min="263000"
-                               max="573000"
-                               step="100"
-                               @change="setRangeSliders"
-                               v-model.number ='minPrice'
-                               placeholder="MIN Price"><br>
+                       <br>
+                        <label>
+                            <input type="range"
+                                   min="263000"
+                                   max="573000"
+                                   step="100"
+                                   @change="setRangeSliders"
+                                   v-model.number ='minPrice'
+                                   placeholder="MIN Price">
+                        </label><br>
 
-                        <input type="range"
-                               min="263000"
-                               max="573000"
-                               step="100"
-                               @change="setRangeSliders"
-                               v-model.number ='maxPrice' placeholder="MIN Price">
+                        <label>
+                            <input type="range"
+                                   min="263000"
+                                   max="573000"
+                                   step="100"
+                                   @change="setRangeSliders"
+                                   v-model.number ='maxPrice' placeholder="MIN Price">
+                        </label>
                         <div class="range-value">
-                            <p> MIN:{{minPrice}}</p>
-                            <p> MAX:{{maxPrice}}</p>
+
                         </div>
                     </div>
                     </div>
                 </th>
-                <th><input type="search" class="search" v-model ='mbedroom' placeholder="Search Bedroom"></th>
-                <th><input type="search" class="search" v-model ='mbathroom' placeholder="Search Bathroom"></th>
-                <th><input type="search" class="search" v-model ='mstorey' placeholder="Search Storey"></th>
-                <th><input type="search" class="search" v-model ='mgarage'  placeholder="Search Garage"></th>
+                <th><label>
+                    <input type="search" class="search" v-model ='mbedroom' placeholder="Search Bedroom">
+                </label></th>
+                <th><label>
+                    <input type="search" class="search" v-model ='mbathroom' placeholder="Search Bathroom">
+                </label></th>
+                <th><label>
+                    <input type="search" class="search" v-model ='mstorey' placeholder="Search Storey">
+                </label></th>
+                <th><label>
+                    <input type="search" class="search" v-model ='mgarage'  placeholder="Search Garage">
+                </label></th>
                 <th width="100">&nbsp;</th>
             </tr>
             <tr>
@@ -67,14 +91,17 @@
             </tr>
             </tbody>
         </table>
-
     </div>
 </template>
-
 <script>
+import VueCircle from 'vue2-circle-progress'
 export default {
+    components: {
+        VueCircle
+    },
     data() {
         return {
+            loading:false,
             realties: [],
             mprice:'',
             mbedroom: '',
@@ -86,26 +113,22 @@ export default {
         }
     },
     created() {
-        this.axios
-            .get('http://localhost:8000/api/realties')
-            .then(response => {
-                this.realties = response.data;
-            });
-        //console.log(this.realties);
-    },
+        this.loading = true;
+        this.axios.get('http://localhost:8000/api/realties')
+            .then(response => {this.realties = response.data;} )
+            .catch(error => console.log(error))
+            .finally(() => this.loading = false)
+        },
     computed: {
         filteredRealty: function () {
-
             let wm = this;
-
             return this.realties
                 .filter(realty => {return realty.bedroom.includes(this.mbedroom)})
                     .filter(realty => {return realty.bathroom.includes(this.mbathroom)})
                             .filter(realty => {return realty.storey.includes(this.mstorey)})
                                 .filter(realty => {return realty.garage.includes(this.mgarage)})
                                     .filter(realty => {return  realty.price>=wm.minPrice && realty.price<=wm.maxPrice})
-        }
-
+        },
     },
     methods: {
         deleteRealty(id) {
@@ -122,7 +145,8 @@ export default {
                 this.maxPrice = this.minPrice;
                 this.minPrice = tmp;
             }
-        }
+        },
+
     }
 }
 
@@ -136,12 +160,6 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.range-slider {
-    width: 200px;
-    margin: auto 16px;
-    text-align: center;
-    position: relative;
 }
 .range-slider svg, .range-slider input [type=range]{
     position: absolute;
@@ -158,4 +176,8 @@ input [type=range]::-webkit-media-slider-thumb
 .range-value {
 
 }
+#min,#max {
+    margin-bottom: 0px;
+}
+.alpha { color: red; }
 </style>
