@@ -1,11 +1,9 @@
 import  Vue from 'vue'
 import Vuex from 'vuex'
-import realties from './realties'
+import real from './real'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    modules: {
-        realties
-    }
+    modules: {real}
 })

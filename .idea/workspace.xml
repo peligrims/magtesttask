@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1727a150-bef0-4473-889c-033c701b89fe" name="Default Changelist" comment="" />
+    <list default="true" id="1727a150-bef0-4473-889c-033c701b89fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/store/real.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AllRealty.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AllRealty.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/realties.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +38,9 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/.editorconfig" previewFile="$PROJECT_DIR$/resources/js/components/AllRealty.vue" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -18,6 +48,9 @@
         <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -147,6 +180,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1mWrV3WtHnv74DcOWGHgzYNZaOa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -158,6 +192,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -262,12 +297,29 @@
       <workItem from="1610520511839" duration="47481000" />
       <workItem from="1610700836414" duration="1217000" />
       <workItem from="1611044915987" duration="12578000" />
-      <workItem from="1611136309521" duration="92062000" />
+      <workItem from="1611136309521" duration="94833000" />
+      <workItem from="1611741309093" duration="349000" />
+      <workItem from="1611856376993" duration="8183000" />
+      <workItem from="1611911443036" duration="11536000" />
+      <workItem from="1611929746598" duration="11282000" />
+      <workItem from="1611943046252" duration="25761000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="457" y="164" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610261006755">
@@ -286,26 +338,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1611329635196" />
-    <state width="1320" height="214" key="GridCell.Tab.0.bottom" timestamp="1611328118139">
+    <state width="1320" height="420" key="GridCell.Tab.0.bottom" timestamp="1612094215093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611328118139" />
-    <state width="1320" height="214" key="GridCell.Tab.0.center" timestamp="1611328118139">
+    <state width="1320" height="420" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612094215093" />
+    <state width="1320" height="420" key="GridCell.Tab.0.center" timestamp="1612094215093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611328118139" />
-    <state width="1320" height="214" key="GridCell.Tab.0.left" timestamp="1611328118139">
+    <state width="1320" height="420" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612094215093" />
+    <state width="1320" height="420" key="GridCell.Tab.0.left" timestamp="1612094215093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611328118139" />
-    <state width="1320" height="214" key="GridCell.Tab.0.right" timestamp="1611328118139">
+    <state width="1320" height="420" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612094215093" />
+    <state width="1320" height="420" key="GridCell.Tab.0.right" timestamp="1612094215093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1320" height="214" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611328118139" />
+    <state width="1320" height="420" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612094215093" />
     <state x="517" y="285" key="NewPhpFileDialog" timestamp="1611228905986">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="285" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1611228905986" />
+    <state x="183" y="0" key="SettingsEditor" timestamp="1611943094997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="183" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611943094997" />
     <state x="390" y="97" width="887" height="534" key="find.popup" timestamp="1610355301245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

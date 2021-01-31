@@ -12,7 +12,7 @@ import './sass/main.scss';
 import 'whatwg-fetch';
 import store from './store';
 import vuetify from './plugins/vuetify';
-import colors from 'vuetify/lib/util/colors';
+
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);

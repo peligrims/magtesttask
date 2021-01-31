@@ -1,65 +1,9 @@
 <template>
     <v-app>
-        <v-flex xs12 class="text-center pt-5" v-if="loading">
-            <v-progress-circular indeterminate :size="100" :width="4" color="purple"></v-progress-circular>
-        </v-flex>
         <h3 class="text-center">All realty</h3><br/>
-        <v-alert
-            v-if="filteredRealty.length <= 0"
-            color="red lighten-2"
-            dismissible
-            icon="mdi-car-wash"
-            type="error"
-        >You have no items</v-alert>
         <table class="table table-bordered" >
+
             <thead>
-            <tr>
-                <th></th>
-                <th>
-                    <p id="min"> MIN:{{minPrice}}</p>
-                    <p id="max" > MAX:{{maxPrice}}</p></th>
-                <th>
-                    <div class="filters">
-                    <div class="v-input--range-slider">
-                       <br>
-                        <label>
-                            <input type="range"
-                                   min="263000"
-                                   max="573000"
-                                   step="100"
-                                   @change="setRangeSliders"
-                                   v-model.number ='minPrice'
-                                   placeholder="MIN Price">
-                        </label><br>
-
-                        <label>
-                            <input type="range"
-                                   min="263000"
-                                   max="573000"
-                                   step="100"
-                                   @change="setRangeSliders"
-                                   v-model.number ='maxPrice' placeholder="MIN Price">
-                        </label>
-                        <div class="range-value">
-
-                        </div>
-                    </div>
-                    </div>
-                </th>
-                <th><label>
-                    <input type="search" class="search" v-model ='mbedroom' placeholder="Search Bedroom">
-                </label></th>
-                <th><label>
-                    <input type="search" class="search" v-model ='mbathroom' placeholder="Search Bathroom">
-                </label></th>
-                <th><label>
-                    <input type="search" class="search" v-model ='mstorey' placeholder="Search Storey">
-                </label></th>
-                <th><label>
-                    <input type="search" class="search" v-model ='mgarage'  placeholder="Search Garage">
-                </label></th>
-                <th width="100">&nbsp;</th>
-            </tr>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
@@ -72,7 +16,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="realty in filteredRealty" :key="realty.id">
+            <tr v-for="realty in  allRealties" :key="realty.id">
                 <td>{{ realty.id }}</td>
                 <td>{{ realty.name }}</td>
                 <td>{{ realty.price }}</td>
@@ -93,69 +37,24 @@
     </v-app>
 </template>
 <script>
-import VueCircle from 'vue2-circle-progress'
-
+import {mapGetters } from "vuex";
 export default {
-    components: {
-        VueCircle
-    },
-    data() {
-        return {
-            loading:false,
-            realties: [],
-            mprice:'',
-            mbedroom: '',
-            mbathroom: '',
-            mstorey: '',
-            mgarage: '',
-            minPrice:263604,
-            maxPrice:572002
-        }
-    },
-    created() {
-        this.loading = true;
-        this.axios.get('http://localhost:8000/api/realties')
-            .then(response => {this.realties = response.data;} )
-            .catch(error => console.log(error))
-            .finally(() => this.loading = false)
-        },
-    computed: {
-        filteredRealty: function () {
-            let wm = this;
-            return this.realties
-                .filter(realty => {return realty.bedroom.includes(this.mbedroom)})
-                    .filter(realty => {return realty.bathroom.includes(this.mbathroom)})
-                            .filter(realty => {return realty.storey.includes(this.mstorey)})
-                                .filter(realty => {return realty.garage.includes(this.mgarage)})
-                                    .filter(realty => {return  realty.price>=wm.minPrice && realty.price<=wm.maxPrice})
-        },
+    computed: mapGetters(["allRealties"]),
+    //computed: {allRealties(){return this.$store.getters.allRealties;}},
+    async mounted() {
+        this.$store.dispatch('getRealties');
     },
     methods: {
-        deleteRealty(id) {
-            this.axios
-                .delete(`http://localhost:8000/api/realty/delete/${id}`)
-                .then(response => {
-                    let i = this.realty.map(item => item.id).indexOf(id); // find index of your object
-                    this.realties.splice(i, 1)
-                });
-        },
-        setRangeSliders(){
-            if (this.minPrice > this.maxPrice ) {
-                let tmp = this.maxPrice;
-                this.maxPrice = this.minPrice;
-                this.minPrice = tmp;
-            }
-        },
-
+        deleteRealty (id) {
+            this.$store.dispatch('deleteRealty', id);
+        }
     }
 }
-
 </script>
 <style>
 input {
     width: 140px;
 }
-
 .filters {
     display: flex;
     justify-content: space-between;
@@ -174,7 +73,6 @@ input [type=range]::-webkit-media-slider-thumb
     margin-top: -7px;
 }
 .range-value {
-
 }
 #min,#max {
     margin-bottom: 0px;
