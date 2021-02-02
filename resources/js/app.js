@@ -1,7 +1,8 @@
-import Vuetify from "vuetify";
+
 
 require('./bootstrap');
 window.Vue = require('vue');
+//import Vue from 'vue'
 import App from './App.vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
@@ -11,7 +12,9 @@ import {routes} from './routes';
 import './sass/main.scss';
 import 'whatwg-fetch';
 import store from './store';
-import vuetify from './plugins/vuetify';
+import vuetify from './plugins/vuetify'
+
+//Vue.use(Vuetify)
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -23,8 +26,8 @@ const router = new VueRouter({
 });
 const app = new Vue({
     el: '#app',
-    vuetify,
     store,
+    vuetify,
     router: router,
     render: h => h(App),
 });
