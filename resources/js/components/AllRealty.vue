@@ -1,18 +1,15 @@
 <template>
     <v-app>
-
         <v-card color="rgba(255, 255, 255, 0.7)" v-if="loading">
             <v-layout justify-center align-center fill-height>
                 <v-progress-circular :size="80" :width="5" indeterminate color="primary"></v-progress-circular>
             </v-layout>
         </v-card>
-
         <h3 class="text-center">All realty</h3><br/>
         <v-alert v-if="filtered.length <= 0" type="error" >
                 <p>You have no items!</p>
         </v-alert>
         <table class="table table-bordered" >
-
             <thead>
             <tr>
                 <th></th>
@@ -43,7 +40,6 @@
                                        v-model.number ='maxPrice' placeholder="MIN Price">
                             </label>
                             <div class="range-value">
-
                             </div>
                         </div>
                     </div>
@@ -97,10 +93,8 @@
 
 import {mapGetters,  } from "vuex";
 export default {
-
     computed: {
         ...mapGetters(["allRealties"]),
-
         price:{
             get(){ return this.$store.getters.price; },
             set( value ){ this.$store.commit("PRICE_COMMIT", value );}
@@ -133,7 +127,6 @@ export default {
             get(){ return this.$store.getters.loading; },
             set( value ){ this.$store.commit("LOADING_COMMIT", value );}
         },
-
         filtered: function () {
             return this.$store.getters.allRealties
                 .filter(realty => {return realty.bedroom.includes(this.bedroom)})
@@ -142,9 +135,7 @@ export default {
                 .filter(realty => {return realty.garage.includes(this.garage)})
                 .filter(realty => {return  realty.price>=this.minPrice && realty.price<=this.maxPrice})
         },
-
     },
-
         async mounted() {
         await this.$store.dispatch('getRealties');
     },
@@ -188,5 +179,4 @@ input [type=range]::-webkit-media-slider-thumb
 #min,#max {
     margin-bottom: 0;
 }
-
 </style>

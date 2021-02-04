@@ -2181,10 +2181,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(["allRealties"])), {}, {
@@ -2429,7 +2425,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\ninput {\n    width: 140px;\n}\n.filters {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.range-slider svg, .range-slider input [type=range]{\n    position: absolute;\n    left: 0;\n    bottom: 0;\n}\ninput [type=range]::-webkit-media-slider-thumb\n{\n    z-index: 2;\n    position: relative;\n    top: 2px;\n    margin-top: -7px;\n}\n.range-value {\n}\n#min,#max {\n    margin-bottom: 0;\n}\n\n", ""]);
+exports.push([module.i, "\ninput {\n    width: 140px;\n}\n.filters {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.range-slider svg, .range-slider input [type=range]{\n    position: absolute;\n    left: 0;\n    bottom: 0;\n}\ninput [type=range]::-webkit-media-slider-thumb\n{\n    z-index: 2;\n    position: relative;\n    top: 2px;\n    margin-top: -7px;\n}\n.range-value {\n}\n#min,#max {\n    margin-bottom: 0;\n}\n", ""]);
 
 // exports
 
